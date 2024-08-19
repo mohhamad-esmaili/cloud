@@ -35,4 +35,6 @@ in this app you can search and see uv,wind status, humidity... and 14 days forec
 └───gen
 ```
 ### App preview:
-![app preview](preview.jpg)
+<p align="center">
+  <img src="preview.jpg" height=500/>
+</p>
