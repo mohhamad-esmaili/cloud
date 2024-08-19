@@ -1,13 +1,15 @@
-import 'package:cloud/Core/constants/app_layout.dart';
-import 'package:cloud/Core/data/weather_model.dart';
-import 'package:cloud/Core/services/dateformater.dart';
+import 'package:gap/gap.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:cloud/gen/assets.gen.dart';
 import 'package:cloud/Core/themes/app_fonts.dart';
+import 'package:cloud/Core/data/weather_model.dart';
+import 'package:cloud/Core/constants/app_layout.dart';
+import 'package:cloud/Core/services/dateformater.dart';
 import 'package:cloud/Core/widgets/divider_line_widget.dart';
 import 'package:cloud/Core/widgets/weathertemp_widget.dart';
-import 'package:cloud/gen/assets.gen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
+// this widget used on home page top weather card
 class WeatherTopcardWidget extends StatelessWidget {
   final ForecastWeatherModel todayWeather;
   final Size deviceSize;
@@ -58,7 +60,7 @@ class WeatherTopcardWidget extends StatelessWidget {
                     Text(
                       "${DateFormaterService().getFullDay(todayWeather.location!.localtime!)},",
                     ).makeBoldHeader3(context),
-                    const SizedBox(width: 5),
+                    const Gap(5),
                     Text(
                       DateFormaterService()
                           .getDayHour(todayWeather.location!.localtime!),

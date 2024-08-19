@@ -1,21 +1,18 @@
-import 'package:cloud/Core/constants/app_layout.dart';
+import 'package:gap/gap.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'package:cloud/Core/data/weather_model.dart';
 import 'package:cloud/Core/themes/app_fonts.dart';
-
+import 'package:cloud/Core/data/weather_model.dart';
+import 'package:cloud/Core/constants/app_layout.dart';
+import 'package:cloud/Core/services/weather_helper.dart';
 import 'package:cloud/Core/widgets/weather_topcard_widget.dart';
 
-import 'package:cloud/Features/home/home_viewmodel.dart';
-import 'package:cloud/Features/home/widgets/grid_itam_widget.dart';
-
-import 'package:cloud/Features/home/widgets/uv_painter.dart';
-import 'package:cloud/Core/services/weather_helper.dart';
-import 'package:cloud/Features/home/widgets/weathercard_widget.dart';
 import 'package:cloud/Features/setting_provider.dart';
-
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:provider/provider.dart';
+import 'package:cloud/Features/home/home_viewmodel.dart';
+import 'package:cloud/Features/home/widgets/uv_painter.dart';
+import 'package:cloud/Features/home/widgets/grid_itam_widget.dart';
+import 'package:cloud/Features/home/widgets/weathercard_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -276,9 +273,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-  // Widget loadingWidget(String isLoading) homeViewmodelProvider.checkAppStatus == "loading"
-  //                     ? Row(
-  //                         children: [CircularProgressIndicator()],
-  //                       )
-  //                     : SizedBox(),
 }

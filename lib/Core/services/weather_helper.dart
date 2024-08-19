@@ -1,3 +1,4 @@
+// this class has duty to categorize each status weather which sent from api
 class WeatherHelper {
   String categorizeHumidity(num humidity) {
     if (humidity <= 25) {

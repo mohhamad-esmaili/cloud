@@ -1,5 +1,8 @@
 import 'package:cloud/gen/assets.gen.dart';
 
+// this function convert api response condition text to icon
+// icons from api is not beautiful and with this func we convert better icons
+// the icons are make with svg and are in assets
 String changeIconGeneratorService(
     {required String apiCondition, num? isNight}) {
   $AssetsIconsGen iconAsset = Assets.icons;

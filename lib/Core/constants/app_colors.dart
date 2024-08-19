@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+// app colors are here
 class AppColors {
   AppColors._();
 
   static const primaryColor = Color(0xff3FA2F6);
   static const secondaryColor = Color(0xffF9A407);
   static const backgroundColor = Color(0xffF1DEC6);
+
   static const lightContainerbackgroundColor = Color.fromRGBO(255, 255, 255, 1);
   static const darkContainerbackgroundColor = Color.fromARGB(146, 89, 85, 79);
 

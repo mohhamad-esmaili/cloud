@@ -1,10 +1,8 @@
-import 'package:cloud/Core/themes/app_fonts.dart';
-
 import 'package:flutter/material.dart';
+import 'package:cloud/Core/themes/app_fonts.dart';
 
 class WeathertempWidget extends StatelessWidget {
   final num tempString;
-
   const WeathertempWidget(this.tempString, {super.key});
 
   @override

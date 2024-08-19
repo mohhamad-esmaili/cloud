@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// just simple divider used in some parts
 class DividerlineWidget extends StatelessWidget {
   const DividerlineWidget({super.key});
 

@@ -1,5 +1,6 @@
 import 'package:intl/intl.dart';
 
+// this class manage dateTimes that sent from api and make it easy to read
 class DateFormaterService {
   String getThreeDayLetter(String date) =>
       DateFormat('EEEE').format(DateTime.parse(date)).substring(0, 3);

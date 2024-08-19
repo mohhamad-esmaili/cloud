@@ -1,11 +1,11 @@
-import 'package:cloud/Core/constants/app_layout.dart';
-import 'package:cloud/Core/data/weather_model.dart';
-import 'package:cloud/Core/services/dateformater.dart';
-import 'package:cloud/Core/themes/app_fonts.dart';
-import 'package:cloud/Core/widgets/divider_line_widget.dart';
-
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/svg.dart';
+import 'package:cloud/Core/themes/app_fonts.dart';
+import 'package:cloud/Core/data/weather_model.dart';
+import 'package:cloud/Core/constants/app_layout.dart';
+import 'package:cloud/Core/services/dateformater.dart';
+import 'package:cloud/Core/widgets/divider_line_widget.dart';
 
 class ForecastView extends StatelessWidget {
   final Forecastday todayWeather;

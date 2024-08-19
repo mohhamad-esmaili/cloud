@@ -1,6 +1,7 @@
-import 'package:cloud/Core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud/Core/constants/app_colors.dart';
 
+// app theme to manage dark and light theme
 class AppThemes {
   AppThemes._();
   static final lightTheme = ThemeData(

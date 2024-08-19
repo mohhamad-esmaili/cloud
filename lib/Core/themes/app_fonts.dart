@@ -1,8 +1,9 @@
-import 'package:cloud/Core/constants/app_colors.dart';
-import 'package:cloud/Features/setting_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud/Core/constants/app_colors.dart';
+import 'package:cloud/Features/setting_provider.dart';
 
+// extension on text, so we can manage texts in here and change them easily
 extension MakeHeader on Text {
   bool _getIsDarkMode(BuildContext context) =>
       Provider.of<SettingProvider>(context).isDarkMode;

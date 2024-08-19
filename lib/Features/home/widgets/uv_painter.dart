@@ -1,8 +1,9 @@
 import 'dart:math';
-
-import 'package:cloud/Core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud/Core/constants/app_colors.dart';
 
+// this custom paint is for uv widget
+// which show uv percent
 class SemiCirclePainter extends CustomPainter {
   final num value;
   final int maxValue;

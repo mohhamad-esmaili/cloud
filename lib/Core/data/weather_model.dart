@@ -1,5 +1,7 @@
 import 'package:cloud/Core/services/icon_gen_service.dart';
 
+// this class is for weather api model
+// with https://quicktype.io/ site can convert json to dart model
 class ForecastWeatherModel {
   Location? location;
   Current? current;

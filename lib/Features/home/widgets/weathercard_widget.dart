@@ -1,14 +1,14 @@
-import 'package:cloud/Core/constants/app_layout.dart';
-import 'package:cloud/Core/data/weather_model.dart';
-import 'package:cloud/Core/services/dateformater.dart';
-import 'package:cloud/Core/themes/app_fonts.dart';
-import 'package:cloud/Features/forecast/forecast_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:cloud/Core/themes/app_fonts.dart';
+import 'package:cloud/Core/data/weather_model.dart';
+import 'package:cloud/Core/constants/app_layout.dart';
+import 'package:cloud/Core/services/dateformater.dart';
+import 'package:cloud/Features/forecast/forecast_view.dart';
+import 'package:gap/gap.dart';
 
 class WeatherCardWidget extends StatelessWidget {
   final ForecastWeatherModel todayWeather;
-
   const WeatherCardWidget({super.key, required this.todayWeather});
 
   @override
@@ -41,14 +41,13 @@ class WeatherCardWidget extends StatelessWidget {
                       color:
                           Theme.of(context).listTileTheme.titleTextStyle!.color,
                       height: 35,
-                      // height: 100,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("°${forecast.day!.mintempC!.round()}")
                             .makeSubText(context),
-                        const SizedBox(width: 5),
+                        const Gap(5),
                         Text("°${forecast.day!.maxtempC!.round()}")
                             .makeSubTextFaded(context),
                       ],

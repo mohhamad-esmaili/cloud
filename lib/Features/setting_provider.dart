@@ -20,7 +20,6 @@ class SettingProvider extends ChangeNotifier {
     if (_isDarkMode) {
       _themeMode = ThemeMode.dark;
     }
-    print(_isDarkMode);
     notifyListeners();
   }
 

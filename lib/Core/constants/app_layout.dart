@@ -1,13 +1,15 @@
-import 'package:cloud/Core/constants/app_colors.dart';
-import 'package:cloud/Features/setting_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud/Core/constants/app_colors.dart';
+import 'package:cloud/Features/setting_provider.dart';
 
+// in this class we manage containers color and ...
 class AppLayout {
   bool _getIsDarkMode(BuildContext context) =>
       Provider.of<SettingProvider>(context).isDarkMode;
 
   EdgeInsets weatherCardPadding = const EdgeInsets.all(20);
+
   BoxDecoration weatherCardDecoration(context) =>
       BoxDecoration(
           gradient: _getIsDarkMode(context)

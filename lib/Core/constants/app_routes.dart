@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:cloud/Features/home/home_view.dart';
 import 'package:cloud/Features/splash/splash_view.dart';
-import 'package:flutter/material.dart';
 
+// this class let you manage each route name
 class RouterConstants {
   static const splashView = "splash";
   static const homeView = "home";
 }
 
+// here is app router where we can manage routes in app
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
