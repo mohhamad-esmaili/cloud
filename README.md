@@ -1,16 +1,38 @@
-# cloud
+<p align="center">
+  <img src="logo.png" height=100/>
+<h1 style="text-align:center">Cloud</h1>
+</p>
 
-A new Flutter project.
+
+
+
+Simple Weather app
+in this app you can search and see uv,wind status, humidity... and 14 days forecast, thank to [WeatherApi](https://www.weatherapi.com/)
+
 
 ## Getting Started
+1. run `flutter pub get` to get packages
+2. `flutter tun`
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### How to use:
+1. run `flutter pub get` to get packages
+2. run `flutter packages pub run build_runner build`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Folder Structure (lib) :
+```
+├───Core
+│   ├───constants
+│   ├───data
+│   ├───services
+│   ├───themes
+│   └───widgets
+├───Features
+│   ├───forecast
+│   ├───home
+│   │   └───widgets
+│   └───splash
+└───gen
+```
+### App preview:
+![app preview](preview.jpg)
