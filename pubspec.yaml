@@ -15,11 +15,19 @@ dependencies:
   provider: ^6.1.2
   http: ^1.2.2
   cached_network_image: ^3.4.1
+  flutter_svg: ^2.0.10+1
+  intl: ^0.19.0
+  gap: ^3.0.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  animate_do: ^3.3.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
+  flutter_gen_runner: ^5.6.0
 
 
 flutter:
@@ -28,6 +36,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/fonts/en/
+    - assets/icons/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

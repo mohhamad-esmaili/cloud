@@ -2,12 +2,15 @@ import 'package:cloud/Core/constants/app_colors.dart';
 import 'package:cloud/Core/constants/app_routes.dart';
 import 'package:cloud/Core/constants/enums.dart';
 
-import 'package:cloud/Core/services/weather_api_service.dart';
 import 'package:cloud/Core/themes/app_fonts.dart';
 import 'package:cloud/Features/home/home_viewmodel.dart';
+import 'package:cloud/Features/setting_provider.dart';
 import 'package:cloud/Features/splash/splash_viewmodel.dart';
+import 'package:cloud/gen/assets.gen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
 class SplashView extends StatelessWidget {
@@ -16,8 +19,9 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SplashViewModelProvider splashProvider =
-        Provider.of<SplashViewModelProvider>(context);
-    splashProvider.refreshApiData();
+        Provider.of<SplashViewModelProvider>(context, listen: true);
+    splashProvider.refreshApiData(
+        Provider.of<SettingProvider>(context, listen: true).userLocation);
     ApiEnum apiEnum = splashProvider.getIsApiLoaded;
     if (apiEnum.name.toString() == ApiEnum.done.name.toString()) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -35,30 +39,44 @@ class SplashView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Stack(
-                alignment: Alignment.centerLeft,
-                children: [
-                  Icon(
-                    Icons.cloud,
-                    color: Colors.black54,
-                    size: 160,
-                  ),
-                  Icon(
-                    Icons.cloud,
-                    color: Colors.white,
-                    size: 150,
-                  ),
-                ],
+              SvgPicture.asset(
+                Assets.icons.wiCloud,
+                color: Colors.white,
+                height: 150,
               ),
               const Text("Cloud").makeBoldHeader1(context),
-              InkWell(
-                onTap: () => WeatherApiService().getTodayWeather(),
-                child: Text("data").makeBoldHeader1(context),
-              ),
-              //TODO: make indicator uncomment
+              const MaxGap(50),
               const CircularProgressIndicator(
                 color: Colors.white,
               ),
+              Consumer<SplashViewModelProvider>(
+                builder: (context, splashp, child) => splashp.hasError == true
+                    ? Container(
+                        margin: EdgeInsets.only(
+                            top: MediaQuery.sizeOf(context).height / 6),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text("Something went Wrong :(")
+                                .makeReqularText(context),
+                            const Text("---- Use Vpn ----")
+                                .makeReqularText(context),
+                            const Gap(10),
+                            TextButton(
+                              onPressed: () => splashProvider.refreshApiData(
+                                  Provider.of<SettingProvider>(context)
+                                      .userLocation),
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      WidgetStateProperty.all(Colors.amber)),
+                              child: const Text("Try Again")
+                                  .makeBoldHeader3(context),
+                            )
+                          ],
+                        ),
+                      )
+                    : const SizedBox(),
+              )
             ],
           ),
         ),
